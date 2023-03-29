@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  padding: 0;
+}
+
+#main {
+  background: #eee;
+  margin: 30px 10px;
+  padding: 30px 5px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+#title {
+  font-size: 1.75rem;
+}
+
+#description {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+#image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#img-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 3rem;
+  background: #fff;
+  padding: 0.6rem;
+}
+
+#img-caption {
+  font-size: 0.7rem;
+  margin: 1rem 0;
+  text-align: left;
+}
+
+#tribute-info {
+  width: 60%;
+  max-width: 600px;
+  min-width: 350px;
+  margin: 1rem auto;
+}
+
+#info-title {
+  font-size: 16px;
+}
+
+#year-list {
+  font-size: 0.9rem;
+  padding-left: 0;
+  margin-top: 2rem;
+}
+
+#year-list > li {
+  margin-bottom: 1rem;
+}
+
+#year-list > li > .year {
+  font-weight: 700;
+}
+
+#quote {
+  margin-left: -16px;
+}
+
+#blockquote-city {
+  margin-left: -16px;
+}
+
+footer {
+  padding: 1rem;
+  text-align: center;
+}
+
+address {
+  font-style: normal;
+  font-weight: bold;
+}
+
+address a {
+  color: rgb(57, 90, 125);
+}
