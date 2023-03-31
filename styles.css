@@ -14,8 +14,8 @@ body {
 
 main {
   width: 50%;
-  min-width: 300px;
-  max-width: 600px;
+  min-width: 400px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
