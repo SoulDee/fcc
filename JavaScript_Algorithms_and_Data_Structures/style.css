@@ -1,3 +1,7 @@
+* {
+  scroll-behavior: smooth;
+}
+
 html {
   font-size: 10px;
 }
@@ -14,6 +18,7 @@ main {
 }
 
 section {
+  margin-top: 3rem;
   padding-bottom: 2rem;
 }
 
@@ -29,5 +34,5 @@ code {
 }
 
 h1 {
-    text-align: center;
+  text-align: center;
 }
