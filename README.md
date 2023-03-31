@@ -10,7 +10,7 @@ Solution of freeCodeCamp Challenges
 - Build a Product Landing Page [Code](./responsive-web-design/product-landing-page/) | [Project](https://souldee.com/fcc/responsive-web-design/product-landing-page/)
 - Build a Personal Portfolio Webpage [Code](./responsive-web-design/personal-portfolio-webpage/) | [Project](https://souldee.com/fcc/responsive-web-design/personal-portfolio-webpage/)
 
-## JavaScript Algorithms and Data Structures - [Porject](https://souldee.com/fcc/javaScript-algorithms-and-data-structures/)
+## JavaScript Algorithms and Data Structures - [Project](https://souldee.com/fcc/javaScript-algorithms-and-data-structures/)
 
 - Palindrome Checker [Code](./javaScript-algorithms-and-data-structures/palindrome-checker/index.js)
 - Roman Numeral Converter [Code](./javaScript-algorithms-and-data-structures/roman-numeral-converter/index.js)
