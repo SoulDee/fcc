@@ -1,0 +1,49 @@
+* {
+  color: white;
+}
+
+#quote-box {
+  border-radius: 4px;
+  width: 500px;
+  padding: 3rem 5rem;
+  background-color: white;
+}
+
+#text {
+  font-size: 2rem;
+  text-align: center;
+  padding: 3rem 0 2rem 0;
+  transition: opacity 1s ease-in-out;
+}
+
+#author {
+  font-size: 1.4rem;
+  text-align: right;
+  opacity: 0.5;
+  transition: opacity 1s ease-in-out;
+}
+
+.buttons-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.icon-button,
+.button {
+  border-radius: 0.4rem;
+  transition: background-color 1s ease-in-out;
+}
+
+.icon-button {
+  padding: 0.8rem 1rem;
+  display: block;
+}
+
+.button {
+  cursor: pointer;
+  padding: 0.8rem 1.6rem;
+  border: 0;
+  outline: none;
+}
