@@ -13,7 +13,7 @@ export default function QuoteBox({ quote, onNewQuote }) {
 
   const handleClick = () => {
     if (timer !== -1) return;
-    console.log("run");
+
     setOpacity(0);
 
     setTimer(
