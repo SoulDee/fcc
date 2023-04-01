@@ -27,3 +27,7 @@ if you want to learn how to programing，click [here](https://www.freecodecamp.o
 - Caesars Cipher [Code](./javaScript-algorithms-and-data-structures/caesars-cipher/index.js)
 - Telephone Number Validator [Code](./javaScript-algorithms-and-data-structures/telephone-number-validator/index.js)
 - Cash Register [Code](./javaScript-algorithms-and-data-structures/cash-register/index.js)
+
+## Front End Development Libraries Projects
+
+- Build a Random Quote Machine [Code](./front-end-development-libraries/random-quote-machine/) | [Project](https://souldee.com/fcc/front-end-development-libraries/random-quote-machine/page)
