@@ -31,3 +31,22 @@ if you want to learn how to programing，click [here](https://www.freecodecamp.o
 ## Front End Development Libraries Projects
 
 - Build a Random Quote Machine [Code](./front-end-development-libraries/random-quote-machine/) | [Project](https://souldee.com/fcc/front-end-development-libraries/random-quote-machine/page)
+- Build a Markdown Previewer [Code](./front-end-development-libraries/markdown-previewer/) | [Project](https://souldee.com/fcc/front-end-development-libraries/markdown-previewer/page)
+
+## FreeCodeCamp Challenges
+
+- [x] (New) Responsive Web Design
+- [x] JavaScript Algorithms and Data Structures
+- [ ] Front End Development Libraries
+- [ ] Data Visualization
+- [ ] Relational Database (Beta)
+- [ ] Back End Development and APIs
+- [ ] Quality Assurance
+- [ ] Scientific Computing with Python
+- [ ] Data Analysis with Python
+- [ ] Information Security
+- [ ] Machine Learning with Python
+- [ ] College Algebra with Python
+- [ ] Coding Interview Prep
+- [ ] Project Euler
+- [ ] Legacy Responsive Web Design
