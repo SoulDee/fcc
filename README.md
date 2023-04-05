@@ -14,24 +14,24 @@ if you want to learn how to programing，click [here](https://www.freecodecamp.o
 
 ## Responsive Web Design
 
-- Build a Survey Form [Code](./responsive-web-design/survey-form/) | [Project](https://souldee.com/fcc/responsive-web-design/survey-form/)
-- Build a Tribute Page [Code](./responsive-web-design/tribute-page/) | [Project](https://souldee.com/fcc/responsive-web-design/tribute-page/)
-- Build a Technical Documentation Page [Code](./responsive-web-design/technical-documentation-page/) | [Project](https://souldee.com/fcc/responsive-web-design/technical-documentation-page/)
-- Build a Product Landing Page [Code](./responsive-web-design/product-landing-page/) | [Project](https://souldee.com/fcc/responsive-web-design/product-landing-page/)
-- Build a Personal Portfolio Webpage [Code](./responsive-web-design/personal-portfolio-webpage/) | [Project](https://souldee.com/fcc/responsive-web-design/personal-portfolio-webpage/)
+- Build a Survey Form [Code](./responsive-web-design/survey-form/) | [Project](https://fcc.souldee.com/responsive-web-design/survey-form/)
+- Build a Tribute Page [Code](./responsive-web-design/tribute-page/) | [Project](https://fcc.souldee.com/responsive-web-design/tribute-page/)
+- Build a Technical Documentation Page [Code](./responsive-web-design/technical-documentation-page/) | [Project](https://fcc.souldee.com/responsive-web-design/technical-documentation-page/)
+- Build a Product Landing Page [Code](./responsive-web-design/product-landing-page/) | [Project](https://fcc.souldee.com/responsive-web-design/product-landing-page/)
+- Build a Personal Portfolio Webpage [Code](./responsive-web-design/personal-portfolio-webpage/) | [Project](https://fcc.souldee.com/responsive-web-design/personal-portfolio-webpage/)
 
-## JavaScript Algorithms and Data Structures - [Project](https://souldee.com/fcc/javaScript-algorithms-and-data-structures/)
+## JavaScript Algorithms and Data Structures - [Project](https://fcc.souldee.com/javaScript-algorithms-and-data-structures/)
 
-- Palindrome Checker [Code](./javaScript-algorithms-and-data-structures/palindrome-checker/index.js)
-- Roman Numeral Converter [Code](./javaScript-algorithms-and-data-structures/roman-numeral-converter/index.js)
-- Caesars Cipher [Code](./javaScript-algorithms-and-data-structures/caesars-cipher/index.js)
-- Telephone Number Validator [Code](./javaScript-algorithms-and-data-structures/telephone-number-validator/index.js)
-- Cash Register [Code](./javaScript-algorithms-and-data-structures/cash-register/index.js)
+- Palindrome Checker [Code](https://github.com/SoulDee/fcc/tree/main/javaScript-algorithms-and-data-structures/palindrome-checker/index.js)
+- Roman Numeral Converter [Code](https://github.com/SoulDee/fcc/tree/main/javaScript-algorithms-and-data-structures/roman-numeral-converter/index.js)
+- Caesars Cipher [Code](https://github.com/SoulDee/fcc/tree/main/javaScript-algorithms-and-data-structures/caesars-cipher/index.js)
+- Telephone Number Validator [Code](https://github.com/SoulDee/fcc/tree/main/javaScript-algorithms-and-data-structures/telephone-number-validator/index.js)
+- Cash Register [Code](https://github.com/SoulDee/fcc/tree/main/javaScript-algorithms-and-data-structures/cash-register/index.js)
 
 ## Front End Development Libraries Projects
 
-- Build a Random Quote Machine [Code](./front-end-development-libraries/random-quote-machine/) | [Project](https://souldee.com/fcc/front-end-development-libraries/random-quote-machine/page)
-- Build a Markdown Previewer [Code](./front-end-development-libraries/markdown-previewer/) | [Project](https://souldee.com/fcc/front-end-development-libraries/markdown-previewer/page)
+- Build a Random Quote Machine [Code](https://github.com/SoulDee/fcc/tree/main/front-end-development-libraries/random-quote-machine/) | [Project](https://fcc.souldee.com/front-end-development-libraries/random-quote-machine/page)
+- Build a Markdown Previewer [Code](https://github.com/SoulDee/fcc/tree/main/front-end-development-libraries/markdown-previewer/) | [Project](https://fcc.souldee.com/front-end-development-libraries/markdown-previewer/page)
 
 ## FreeCodeCamp Challenges
 
