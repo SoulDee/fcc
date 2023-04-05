@@ -1,0 +1,12 @@
+{
+  "name": "fcc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "marked -i README.md -o index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
