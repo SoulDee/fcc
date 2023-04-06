@@ -1,0 +1,272 @@
+:root {
+  --animation-time: 300ms;
+  --primary-color: rgb(27, 25, 25);
+  --accent-color: #c03547;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  position: relative;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:focus {
+  outline: none;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+}
+
+#navbar {
+  position: sticky;
+  z-index: 999;
+  top: 0;
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: var(--accent-color);
+}
+
+#nav-links {
+  display: flex;
+  column-gap: 4rem;
+}
+
+.nav-link {
+  font-size: 2rem;
+  font-weight: 500;
+  color: white;
+}
+
+.cursor {
+  font-size: 1.5em;
+  animation: wave 1s linear infinite;
+}
+
+section {
+  padding: 8rem 0;
+}
+
+#welcome-section {
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#welcome-section h1 {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  margin-top: -2rem;
+}
+
+#projects {
+  background-color: cadetblue;
+}
+
+#projects h2 {
+  font-size: 4rem;
+  text-align: center;
+  text-decoration: underline;
+}
+
+#projects .container {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.project-tile {
+  background-color: var(--primary-color);
+}
+
+.project-tile .project-img img {
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.project-tile .project-name {
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.project-name .text {
+  position: relative;
+}
+
+.project-name .text::before,
+.project-name .text::after {
+  color: transparent;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: bold;
+  transition: all var(--animation-time) ease-in-out;
+  font-size: 1.5em;
+}
+
+.project-name .text::before {
+  content: '<';
+  right: calc(100% + 1rem);
+}
+
+.project-name .text::after {
+  content: '/>';
+  left: calc(100% + 1rem);
+}
+
+.project-tile:hover .text::before,
+.project-tile:hover .text::after {
+  color: var(--accent-color);
+}
+
+#show-more {
+  position: relative;
+  display: inherit;
+  padding: 1.5rem 4rem 1.5rem 2rem;
+  background-color: var(--primary-color);
+  margin: 3rem auto;
+  border: none;
+  outline: none;
+  transition: all var(--animation-time) ease-in-out;
+}
+
+#show-more::after {
+  content: '>';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 2rem;
+  font-size: 1.5em;
+  color: white;
+  transition: all var(--animation-time) ease-in-out;
+  border-radius: 4px;
+}
+
+#show-more:hover {
+  background-color: var(--accent-color);
+}
+
+#show-more:hover::after {
+  right: 1.5rem;
+}
+
+#contacts {
+  background-color: var(--primary-color);
+  padding: 30rem 0;
+}
+
+#contacts h2 {
+  font-size: 5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 2rem;
+  text-align: center;
+  font-style: italic;
+}
+
+#contact-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 3rem;
+  font-size: 2.25rem;
+  margin-top: 6rem;
+}
+
+#contact-list li {
+  transition: all var(--animation-time) ease-in-out;
+}
+
+#contact-list li:hover {
+  transform: translateY(0.5em);
+}
+
+#contact-list .fab,
+#contact-list .fas {
+  margin-right: 1rem;
+}
+
+footer {
+  border-top: 4px solid var(--accent-color);
+  background-color: var(--primary-color);
+  padding: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+@keyframes wave {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  #projects .container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  footer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  #projects .container {
+    grid-template-columns: 1fr;
+  }
+}
