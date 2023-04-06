@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "marked -i README.md -o index.html"
+    "build": "marked -i README.md -o ./public/index.html"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "marked": "^4.3.0"
+  }
 }

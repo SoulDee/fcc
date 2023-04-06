@@ -30,8 +30,8 @@ if you want to learn how to programing，click [here](https://www.freecodecamp.o
 
 ## Front End Development Libraries Projects
 
-- Build a Random Quote Machine [Code](https://github.com/SoulDee/fcc/tree/main/front-end-development-libraries/random-quote-machine/) | [Project](https://fcc.souldee.com/front-end-development-libraries/random-quote-machine/page)
-- Build a Markdown Previewer [Code](https://github.com/SoulDee/fcc/tree/main/front-end-development-libraries/markdown-previewer/) | [Project](https://fcc.souldee.com/front-end-development-libraries/markdown-previewer/page)
+- Build a Random Quote Machine [Code](https://github.com/SoulDee/fcc/tree/main/front-end-development-libraries/random-quote-machine/) | [Project](https://fcc.souldee.com/front-end-development-libraries/random-quote-machine/)
+- Build a Markdown Previewer [Code](https://github.com/SoulDee/fcc/tree/main/front-end-development-libraries/markdown-previewer/) | [Project](https://fcc.souldee.com/front-end-development-libraries/markdown-previewer/)
 
 ## FreeCodeCamp Challenges
 
