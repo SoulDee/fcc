@@ -1,11 +1,11 @@
 import Editor from './Editor';
 import Previewer from './Previewer';
-import './App.css';
+import './MarkdownPreviewer.css';
 import { useState } from 'react';
 import { marked } from 'marked';
 import { DEFAULT_INNER_HTML } from './default_html.js';
 
-function App() {
+function MarkdownPreviewer() {
   const [content, setContent] = useState(DEFAULT_INNER_HTML);
   const [html, setHtml] = useState(marked.parse(DEFAULT_INNER_HTML, { breaks: true }));
 
@@ -24,4 +24,4 @@ function App() {
   );
 }
 
-export default App;
+export default MarkdownPreviewer;

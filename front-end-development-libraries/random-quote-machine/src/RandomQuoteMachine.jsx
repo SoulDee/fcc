@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import './App.css';
+import './RandomQuoteMachine.css';
 import { randomQuote } from './quotes';
 import QuoteBox from './QuoteBox';
 import { useEffect } from 'react';
 import { ThemeContent } from './content';
 import { randomFloat, randomInt } from './utils';
 
-function App() {
+function RandomQuoteMachine() {
   const [quote, setQuote] = useState({ text: '', author: '' });
   const [theme, setTheme] = useState({ primary: '' });
 
@@ -39,5 +39,5 @@ function App() {
   );
 }
 
-export default App;
+export default RandomQuoteMachine;
 
