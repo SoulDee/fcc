@@ -1,0 +1,18 @@
+.drum-pad {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 4px;
+  background: #386661;
+  color: white;
+  box-shadow: 2px 2px 4px black;
+  font-weight: bold;
+}
+
+.drum-pad:active,
+.drum-pad.active {
+  box-shadow: 1px 1px 1px black;
+}

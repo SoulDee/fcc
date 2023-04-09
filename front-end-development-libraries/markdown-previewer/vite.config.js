@@ -6,6 +6,6 @@ export default defineConfig({
   plugins: [react()],
   base: "./",
   build: {
-    outDir: "/public/front-end-development-libraries/markdown-previewer"
+    outDir: "../../public/front-end-development-libraries/markdown-previewer"
   }
 })

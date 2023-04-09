@@ -6,6 +6,6 @@ export default defineConfig({
   plugins: [react()],
   base: "./",
   build: {
-    outDir: "../../public/front-end-development-libraries/random-quote-machine"
+    outDir: "../../public/front-end-development-libraries/drum-machine"
   }
 })
