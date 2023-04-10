@@ -1,14 +1,36 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './DrumMachine.css';
 import DrumPad from './DrumPad';
 import Display from './Display';
 import VolumeControl from './VolumeControl';
 import { Musics } from './musics';
 
-function DrumMachine() {
+function DrumMachine({musics}) {
   const [message, setMessage] = useState('');
   const [volume, setVolume] = useState(0.6);
-  const [timer, setTimer] = useState(-1);
+
+  const timerRef = useRef(null);
+  const nodesRef = useRef(null);
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeydown);
+    document.addEventListener('keyup', handleKeyup);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeydown);
+      document.removeEventListener('keyup', handleKeyup);
+    };
+  });
+
+  function handleKeydown(e) {
+    const node = getNode(e);
+    node && node.handleKeydown();
+  }
+
+  function handleKeyup(e) {
+    const node = getNode(e);
+    node && node.handleKeyup();
+  }
 
   function handleTriggered(message) {
     handleMessage(message);
@@ -21,25 +43,49 @@ function DrumMachine() {
   }
 
   function handleMessage(message) {
-    if (timer !== -1) {
-      clearTimeout(timer);
-    }
+    clearTimeout(timerRef.current);
 
-    const id = setTimeout(() => {
+    timerRef.current = setTimeout(() => {
       setMessage('');
-      setTimer(-1);
     }, 1000);
-    setTimer(id);
 
     setMessage(message);
+  }
+
+  function getNodesMap() {
+    if (!nodesRef.current) {
+      nodesRef.current = new Map();
+    }
+
+    return nodesRef.current;
+  }
+
+  function getNode(e) {
+    const map = getNodesMap();
+    const id = e.key.toUpperCase();
+    return map.get(id);
   }
 
   return (
     <>
       <div id='drum-machine'>
         <div className='drum-pads-container'>
-          {Musics.map((music) => (
-            <DrumPad key={music.id} volume={volume} data={music} triggered={handleTriggered} />
+          {musics.map((music) => (
+            <DrumPad
+              ref={(node) => {
+                const map = getNodesMap();
+
+                if (node) {
+                  map.set(music.id, node);
+                } else {
+                  map.delete(music.id);
+                }
+              }}
+              key={music.id}
+              volume={volume}
+              data={music}
+              triggered={handleTriggered}
+            />
           ))}
         </div>
         <div className='action-box'>
@@ -52,4 +98,8 @@ function DrumMachine() {
   );
 }
 
-export default DrumMachine;
+function App() {
+  return <DrumMachine musics={Musics} />
+}
+
+export default App;
