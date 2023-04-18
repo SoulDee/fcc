@@ -6,7 +6,7 @@ import Model from './CalculatorModel';
 import LoginGroup from './LogicGroup';
 
 function Calculator() {
-  const calculator = useRef(new Model.ImmediateExcutionModel());
+  const calculator = useRef(new Model.FormulaLogicModel());
 
   const [input, setInput] = useState('0');
   const [formula, setFormula] = useState('');

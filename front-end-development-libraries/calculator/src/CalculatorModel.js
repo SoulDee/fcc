@@ -20,6 +20,7 @@ const Operators = [
 
 class CalcLogicModel {
   // type: 0 数字 | 1 符号
+  _formula = "";
   _queue = [];
   _equalTouched = false;
 
@@ -41,7 +42,7 @@ class CalcLogicModel {
         }
 
         if (this._empty() || (!this._empty() && this._last().type === 1)) {
-          this._queue.push({ type: 0, text });
+          this._queue.push({ type: 0, text, key: -1 });
         } else {
           const last = this._last();
 
@@ -58,7 +59,7 @@ class CalcLogicModel {
       // decimal
       case 10:
         if (this._empty()) {
-          this._queue.push({ type: 0, text: "0" });
+          this._queue.push({ type: 0, text: "0", key: -1 });
         }
 
         if (!this._last().text.includes(".")) {
@@ -73,17 +74,17 @@ class CalcLogicModel {
         }
 
         if (this._empty()) {
-          this._queue.push({ type: 0, text });
+          this._queue.push({ type: 0, text, key: -1 });
         } else {
           if (this._lastIsNumber()) {
             if (this._last().text === "-") {
               this._queue = [...this._queue.slice(0, this._queue.length - 1)];
               this._last().text = text;
             } else {
-              this._queue.push({ type: 1, text })
+              this._queue.push({ type: 1, text, key })
             }
           } else {
-            this._queue.push({ type: 0, text });
+            this._queue.push({ type: 0, text, key: -1 });
           }
         }
         break;
@@ -99,8 +100,9 @@ class CalcLogicModel {
           if (this._last().text === "-") {
             this._queue = [...this._queue.slice(0, this._queue.length - 1)];
             this._last().text = text;
+            this._last().key = key;
           } else {
-            this._queue.push({ type: 1, text })
+            this._queue.push({ type: 1, text, key })
           }
 
         } else {
@@ -134,39 +136,28 @@ class CalcLogicModel {
       default:
         break;
     }
+    this._setFormula();
+    this._updateFormula();
 
     return result;
   }
 
   formula() {
-    const formula = this._queue.reduce((res, next) => {
+    return this._formula;
+  }
+
+  _updateFormula() { }
+
+  _setFormula() {
+    this._formula = this._queue.reduce((res, next) => {
       return res + (next.type === 0 && next.text.startsWith("-") ? `(${next.text})` : next.text);
     }, "");
-    return this._equalTouched ? formula + "=" + this._calc() : formula;
   }
 
   _empty() {
     return this._queue.length === 0;
   }
 
-  _symbol(key) {
-    const symbols = {
-      11: "+",
-      12: "-",
-      13: "x",
-      14: "/"
-    }
-
-    let result = -1;
-
-    for (let i of Object.keys(symbols)) {
-      if (symbols[i] === key) {
-        result = i;
-      }
-    }
-
-    return parseInt(result);
-  }
 
   _lastIsNumber() {
     return this._last().type === 0;
@@ -177,11 +168,18 @@ class CalcLogicModel {
   }
 
   _calc() { };
+  _handleEqualTouched() { };
 }
 
 class ImmediateExcutionModel extends CalcLogicModel {
   constructor() {
     super()
+  }
+
+  _updateFormula() {
+    if (this._equalTouched) {
+      this._formula = this._formula + "=" + this._calc();
+    }
   }
 
   _calc() {
@@ -217,25 +215,173 @@ class ImmediateExcutionModel extends CalcLogicModel {
     }
     return result;
   }
+
+  _symbol(key) {
+    const symbols = {
+      11: "+",
+      12: "-",
+      13: "x",
+      14: "/"
+    }
+
+    let result = -1;
+
+    for (let i of Object.keys(symbols)) {
+      if (symbols[i] === key) {
+        result = i;
+      }
+    }
+
+    return parseInt(result);
+  }
+}
+
+class FormulaTree {
+  _root = null;
+
+  isEmpty() {
+    return !!this._root;
+  }
+
+  value() {
+    return this._root.value();
+  }
+
+  append(node) {
+    if (!this._root) {
+      this._root = node;
+    } else {
+      if (this._root.priority() <= node.priority()) {
+        node._left = this._root;
+        node._left._parent = node;
+        this._root = node;
+        this._root._parent = null;
+
+      } else {
+        if (this._root._left) {
+          if (this._root._right) {
+            this._root._right.append(node);
+          } else {
+            this._root._right = node;
+            node._parent = this._root;
+          }
+        } else {
+          this._root._left = node;
+          node._parent = this._root;
+        }
+      }
+    }
+  }
+}
+
+class FormulaTreeNode {
+  _key = -1;
+  _value = "";
+  _left = null;
+  _right = null;
+  _parent = null;
+
+  constructor(key, value) {
+    this._key = key;
+    this._value = value;
+  }
+
+  value() {
+    return this.isLeaf() ? parseFloat(this._value) : this.calc();
+  }
+
+  isLeaf() {
+    return !this._left && !this._right && this.isNumber();
+  }
+
+  isNumber() {
+    return this._key >= -1 && this._key <= 9;
+  }
+
+  priority() {
+    let result = -1;
+    switch (this._key) {
+      case 0: case 1: case 2: case 3:
+      case 4: case 5: case 6: case 7:
+      case 8: case 9: case 10: case -1:
+        result = 1;
+        break;
+      case 11:
+      case 12:
+        result = 3;
+        break;
+      case 13:
+      case 14:
+        result = 2;
+        break;
+      default:
+        break;
+    }
+    return result;
+  }
+
+  append(node) {
+
+    if (node.priority() >= this.priority()) {
+      node._parent = this._parent;
+      node._parent._right = node;
+      this._parent = node;
+      node._left = this;
+    } else {
+      if (this._left) {
+        if (this._right) {
+          this._right.append(node);
+        } else {
+          this._right = node;
+          node._parent = this;
+        }
+      } else {
+        this._left = node;
+        node._parent = this;
+      }
+    }
+  }
+
+  calc() {
+    const left = this._left.value();
+    const right = this._right.value();
+    switch (this._key) {
+      case 11:
+        return left + right;
+      case 12:
+        return left - right;
+      case 13:
+        return left * right;
+      case 14:
+        return left / right;
+    }
+  }
 }
 
 class FormulaLogicModel extends CalcLogicModel {
-  // 3 + 5 x 6 - 2 / 4 =
-  // 考虑写成一个公式树，如下规则
-  // + - 进入根节点，会成为新的父节点，原节点成为左节点
-  // * / 进入根节点，如果此时根节点为数字，则成为新的根节点，如果是优先级更低的 + - 操作符，则进入右节点
-  // 如果是数字，则成为新的父节点
-
-  // 考虑更多符号，例如 （） 则创建新的节点树，然后嵌套
-  // 考虑是否以上规则可以根据优先级延展，例如 数字优先级为 99，+= 优先级为 1， */ 优先级为 2，
-  // 优先级高遇到低，成为右节点，优先级低遇高或者优先级相等，将其原来节点左旋，然后成为父节点，
-
   constructor() {
     super();
   }
 
   _calc() {
-    return "in coding......";
+    let tree = new FormulaTree();
+
+    for (let i = 0; i < this._queue.length; i++) {
+      const { key, text } = this._queue[i];
+      let node = new FormulaTreeNode(key, text);
+      tree.append(node);
+    }
+
+    const result = tree.value();
+
+    this._cache = this._formula;
+    this._queue = [{ key: -1, text: result + "", type: 0 }];
+
+    return result;
+  }
+
+  _updateFormula() {
+    
   }
 }
 

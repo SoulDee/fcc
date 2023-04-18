@@ -9,12 +9,12 @@ export default function LoginGroup({ onChange }) {
     <>
       <div className='logic-group'>
         <div className='logic-item'>
-          <input type='radio' name='logic' id='immediate' defaultChecked value={0} onChange={handleChange} />
+          <input type='radio' name='logic' id='immediate' value={0} onChange={handleChange} />
           <label htmlFor='immediate'>Immediate Logic</label>
         </div>
 
         <div className='logic-item'>
-          <input disabled type='radio' name='logic' value={1} onChange={handleChange} />
+          <input type='radio' name='logic' defaultChecked value={1} onChange={handleChange} />
           <label htmlFor='formula'>Formula Logic</label>
         </div>
       </div>
