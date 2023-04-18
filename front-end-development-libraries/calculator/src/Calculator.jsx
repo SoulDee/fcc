@@ -22,7 +22,7 @@ function Calculator() {
   function handleCalcLogicChange(key) {
     setInput('0');
     setFormula('');
-    
+
     switch (key) {
       case '0':
         calculator.current = new Model.ImmediateExcutionModel();
@@ -52,6 +52,7 @@ function Calculator() {
           />
         ))}
       </div>
+      <div id='create-at'>Craete & Design By SoulDee</div>
     </>
   );
 }

@@ -38,6 +38,12 @@
     background: #4a4a4d;
 }
 
+#create-at {
+    text-align: center;
+    color: #636363;
+    margin-top: 2rem;
+}
+
 #zero {
     grid-area: zero;
 }
