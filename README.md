@@ -33,6 +33,7 @@ if you want to learn how to programing，click [here](https://www.freecodecamp.o
 - Build a Random Quote Machine [Code](https://github.com/SoulDee/fcc/tree/main/front-end-development-libraries/random-quote-machine/) | [Project](https://fcc.souldee.com/front-end-development-libraries/random-quote-machine/)
 - Build a Markdown Previewer [Code](https://github.com/SoulDee/fcc/tree/main/front-end-development-libraries/markdown-previewer/) | [Project](https://fcc.souldee.com/front-end-development-libraries/markdown-previewer/)
 - Build a Drum Machine [Code](https://github.com/SoulDee/fcc/tree/main/front-end-development-libraries/drum-machine/) | [Project](https://fcc.souldee.com/front-end-development-libraries/drum-machine/)
+- Build a JavaScript Calculator [Code](https://github.com/SoulDee/fcc/tree/main/front-end-development-libraries/calculator/) | [Project](https://fcc.souldee.com/front-end-development-libraries/calculator/)
 
 ## FreeCodeCamp Challenges
 

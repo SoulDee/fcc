@@ -1,0 +1,23 @@
+#display-content {
+  color: white;
+  font-family: math;
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+  row-gap: 4px;
+}
+
+#output,
+#display {
+  user-select: none;
+  padding: 1rem;
+  overflow: hidden;
+  text-align: right;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+#display {
+  font-size: 3rem;
+}

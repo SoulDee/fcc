@@ -1,0 +1,15 @@
+.logic-group {
+  display: flex;
+  gap: 1rem;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+}
+
+.logic-item {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
