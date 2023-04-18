@@ -20,7 +20,7 @@ if you want to learn how to programing，click [here](https://www.freecodecamp.o
 - Build a Product Landing Page [Code](./responsive-web-design/product-landing-page/) | [Project](https://fcc.souldee.com/responsive-web-design/product-landing-page/)
 - Build a Personal Portfolio Webpage [Code](./responsive-web-design/personal-portfolio-webpage/) | [Project](https://fcc.souldee.com/responsive-web-design/personal-portfolio-webpage/)
 
-## JavaScript Algorithms and Data Structures - [Project](https://fcc.souldee.com/javaScript-algorithms-and-data-structures/)
+## JavaScript Algorithms and Data Structures
 
 - Palindrome Checker [Code](https://github.com/SoulDee/fcc/tree/main/javaScript-algorithms-and-data-structures/palindrome-checker/index.js)
 - Roman Numeral Converter [Code](https://github.com/SoulDee/fcc/tree/main/javaScript-algorithms-and-data-structures/roman-numeral-converter/index.js)
