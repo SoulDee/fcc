@@ -80,6 +80,7 @@ class CalcLogicModel {
             if (this._last().text === "-") {
               this._queue = [...this._queue.slice(0, this._queue.length - 1)];
               this._last().text = text;
+              this._last().key = key;
             } else {
               this._queue.push({ type: 1, text, key })
             }
@@ -107,6 +108,7 @@ class CalcLogicModel {
 
         } else {
           this._last().text = text;
+          this._last().key = key;
         }
 
         break;
@@ -138,7 +140,7 @@ class CalcLogicModel {
     }
     this._setFormula();
     this._updateFormula();
-
+    console.log(this._queue);
     return result;
   }
 
